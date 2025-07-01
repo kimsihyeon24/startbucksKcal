@@ -1,0 +1,54 @@
+.layout-root {
+  min-height: 100vh;
+  background: #036635;
+}
+
+.layout-header {
+  text-align: center;
+  padding: 2rem 0 0.5rem 0;
+  font-size: 2rem;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title-container img {
+  width: 10vh;
+  height: 10vh;
+}
+
+.layout-divider {
+  margin: 0 0 1.5rem 0;
+  border: none;
+  border-top: 2px solid #ddd;
+}
+
+.layout-main {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.layout-ad {
+  background: #eee;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.layout-content {
+  background: #fff;
+  min-height: 60vh;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 2rem;
+}
