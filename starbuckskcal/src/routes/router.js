@@ -4,7 +4,8 @@ import {
 } from "react-router";
 
 import ReactDOM from "react-dom/client";
-import Welcome from "../pages/welcome/index.js";
+import Welcome from "../pages/Welcome/welcome.js";
+import Signup from "../pages/Signup/signup.js";
 import App from "../App.js";
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       // ...다른 페이지
     ],
   },
+  {
+    path: "/signup",
+    element: <Signup />, // 로그인 페이지
+  }
 ]);
 
 const root = document.getElementById("root");
