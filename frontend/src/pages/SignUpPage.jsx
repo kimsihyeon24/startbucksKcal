@@ -13,11 +13,11 @@ const SignUpPage = () => {
   const handleId = (e) => {
     setId(e.target.value);
   };
-  const handlePw = (e) => {
-    setPw(e.target.value);
-  };
   const handleNickName = (e) => {
     setNickName(e.target.value);
+  };
+  const handlePw = (e) => {
+    setPw(e.target.value);
   };
   const handlePwCheck = (e) => {
     setPwCheck(e.target.value);
@@ -28,7 +28,25 @@ const SignUpPage = () => {
   const handleCertNum = (e) => {
     setCertNum(e.target.value);
   };
-
+  const checkId = () => {
+    // 아이디 중복 확인 로직
+    alert(`아이디: ${id} 중복 확인`);
+  };
+  const checkNickName = () => {
+    // 닉네임 중복 확인 로직
+    alert(`닉네임: ${nickName} 중복 확인`);
+  }
+  const checkPassword = () => {
+    if (pw !== pwCheck) {
+      alert("비밀번호가 일치하지 않습니다.");
+    } else {
+      alert("비밀번호가 일치합니다.");
+    }
+  }
+  const checkEmail = () => {
+    // 이메일 중복 확인 로직
+    alert(`이메일: ${email} 중복 확인`);
+  }
   return (
     <>
       <Link to="/login">
@@ -54,7 +72,10 @@ const SignUpPage = () => {
                 className="w-80 h-12 text-lg p-3 border rounded-lg"
                 onChange={handleId}
               />
-              <button className="bg-green-800 rounded-lg w-20 h-12 text-white">
+              <button
+                className="bg-green-800 rounded-lg w-20 h-12 text-white"
+                onClick={checkId}
+              >
                 중복확인
               </button>
             </div>
@@ -69,9 +90,9 @@ const SignUpPage = () => {
                 type="text"
                 placeholder="닉네임를 입력하시오"
                 className="w-80 h-12 text-lg p-3 border rounded-lg"
-                onChange={handleId}
+                onChange={handleNickName}
               />
-              <button className="bg-green-800 rounded-lg w-20 h-12 text-white">
+              <button className="bg-green-800 rounded-lg w-20 h-12 text-white" onClick={checkNickName}>
                 중복확인
               </button>
             </div>
@@ -85,7 +106,7 @@ const SignUpPage = () => {
                 type="text"
                 placeholder="비밀번호를 입력하시오"
                 className="w-80 h-12 text-lg p-3 border rounded-lg"
-                onChange={handleId}
+                onChange={handlePw}
               />
             </div>
           </div>
@@ -98,9 +119,9 @@ const SignUpPage = () => {
                 type="text"
                 placeholder="비밀번호를 입력하시오"
                 className="w-80 h-12 text-lg p-3 border rounded-lg"
-                onChange={handleId}
+                onChange={handlePwCheck}
               />
-              <button className="bg-green-800 rounded-lg w-20 h-12 text-white">
+              <button className="bg-green-800 rounded-lg w-20 h-12 text-white" onClick={checkPassword}>
                 확인
               </button>
             </div>
@@ -114,9 +135,9 @@ const SignUpPage = () => {
                 type="text"
                 placeholder="이메일를 입력하시오"
                 className="w-80 h-12 text-lg p-3 border rounded-lg"
-                onChange={handleId}
+                onChange={handleEmail}
               />
-              <button className="bg-green-800 rounded-lg w-20 h-12 text-white">
+              <button className="bg-green-800 rounded-lg w-20 h-12 text-white" onClick={checkEmail}>
                 중복확인
               </button>
             </div>
@@ -130,7 +151,7 @@ const SignUpPage = () => {
                 type="text"
                 placeholder="인증번호를 입력하시오"
                 className="w-80 h-12 text-lg p-3 border rounded-lg"
-                onChange={handleId}
+                onChange={handleCertNum}
               />
               <button className="bg-green-800 rounded-lg w-20 h-12 text-white">
                 확인
